@@ -19,7 +19,19 @@
 	Remove both A,B is both know each other.
 	*/
 	
-	
+	public class XknowsY{
+		String first;
+		String second;
+		boolean value;
+		
+		XknowsY(String A, String B){
+			this.first= A;
+			this.second = B;
+			this.value = value;
+			
+		}
+				
+	}
 	
 	public static String findCelebrity(String[] guestlist) {
 		int len = guestlist.length;
