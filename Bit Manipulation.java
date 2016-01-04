@@ -2,6 +2,8 @@
     /*Question 1: Given an array of numbers, all numbers are doubled except one, find that number.
       Question 2: In general write a program to output unbiased outcome from biased coin.
       Question 3: Given an array of numbers, print the numbers that are repeated 3 times.
+      Question 4: How many bit require to convert the number a to b:
+      
     */
 
 
@@ -41,3 +43,23 @@
 
 		return (M[i][j] == 1) ? 1 : 0;
 	}
+
+
+        /* Question 4:
+        
+        */
+        public static int howManyBitReq(int a, int b) {
+		 int count = 0;
+		 
+		 int comb = a^b;
+		 
+		 while(comb>0){
+			 if((comb&1) == 1)
+			 ++count;
+			 comb >>= 1;
+		 }
+		 
+		 return count;
+	 }
+        
+        
