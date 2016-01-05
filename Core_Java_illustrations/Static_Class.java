@@ -39,6 +39,11 @@ public class OuterClassForStaticNestedClass {
 		OuterClassForStaticNestedClass.InnerClassInNestedClass outerAndNONStaticInner1 = new OuterClassForStaticNestedClass().new InnerClassInNestedClass();
 		outerAndNONStaticInner.methodIn_NON_StaticInnerClass();
 		
+		//also 
+		StaticClassInNestedClass AnInstantceOfStaticClass = new StaticClassInNestedClass();//will work
+		//InnerClassInNestedClass AnInstantceOfNONStaticClass = new InnerClassInNestedClass();//won't work
+		
+		
 				
 	}
 
