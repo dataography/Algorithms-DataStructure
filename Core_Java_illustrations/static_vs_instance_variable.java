@@ -110,10 +110,7 @@ Read more: http://javarevisited.blogspot.com/2011/12/final-variable-method-class
 		
 		
 		
-		final ArrayList Loans = new ArrayList();
-		Loans.add("home loan");  //valid
-		Loans.add("personal loan"); //valid
-	    //Loans = new Vector();  //not valid her turlu calismiyor anlamadim
+	
 
 
 		
