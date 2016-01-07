@@ -27,6 +27,8 @@ public class Singleton {
 		   getInstance();
 		   getInstance();
 		   getInstance();
+		   
+		   //output will be only one "created" term, not 6 many
 		   				   
 	   }
 }
