@@ -33,11 +33,11 @@ public class Movies {
 		// movieList is an array of object type Movies
 		Movies[] moviesList = new Movies[3];
 
-                //yet element of the movies can be a different objects(instance of a genre) as follow:
+                //yet element of the movies can be a different objects(instance of a genre) as follow:(Why ?)
 		moviesList[0] = theGodFather;
 		moviesList[1] = TwelveAngryMan;
 		moviesList[2] = SevenSamurai;
-		//which is because of each object is a instance of a genre which extends  Movies Class
+		//Because,  each object is a instance of a genre which extends  Movies Class.
 
 
 		theGodFather.setImdbScore(9.2);
@@ -45,11 +45,7 @@ public class Movies {
 		SevenSamurai.setImdbScore(8.7);
 
 		for (Movies movie : moviesList) {
-
 			System.out.println(movie.imdbScore);
-
 		}
-
 	}
-
 }
