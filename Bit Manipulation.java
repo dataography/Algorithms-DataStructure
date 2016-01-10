@@ -3,7 +3,7 @@
       Question 2: In general write a program to output unbiased outcome from biased coin.
       Question 3: Given an array of numbers, print the numbers that are repeated 3 times.
       Question 4: How many bit require to convert the number a to b:
-      Question 5: 
+      Question 5: Swaping 2 integers.
       
     */
 
@@ -63,4 +63,15 @@
 		 return count;
 	 }
         
+        /* Question 5:
+	Swap the given two integers.
+	*/
+	
+	public void swap(int a, int b) {
+		
+		a = a ^ b;
+		b = b ^ a;
+		a = a ^ b;
+		
+	}
         
