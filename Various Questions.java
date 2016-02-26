@@ -516,6 +516,26 @@ public boolean isSubString(String main, String other) {
 
 		return ar;
 	}
-
+	
+	//target sum in an array.
+	public boolean targetSum1(int[] ar, int target) {
+		
+		int left = 0;
+		int right = 0;
+		int sum = 0;
+		while(right < ar.length) {
+			
+			if (sum == target){
+				return true;
+			}
+			else if (sum < target){
+				sum += ar[right];
+				++right;
+			}else {
+				sum -= ar[left];
+				++left;
+				}
+			
+		}
 
 
