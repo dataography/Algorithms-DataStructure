@@ -186,30 +186,36 @@
 	/* Question 7
 	Implementation of isSubstring method.
 	*/
-	public static boolean isSubstring(String main, String str) {
-		int strLen = str.length();
-		int mainLen = main.length();
-		int start = 0;
-		int runner = 0;
-		int match = 0;
-		while (runner < mainLen) {
+public boolean isSubString(String main, String other) {
 
-			if (main.charAt(runner) == str.charAt(start)) {
-				++start;
-				++runner;
-				++match;
-				if (match == strLen) {
-					return true;
+		int lenMain = main.length();
+		int lenOther = other.length();
+		int runner = 0;
+		char o = other.charAt(0);
+		while (runner <= lenMain - lenOther) {
+			char m = main.charAt(runner);
+
+			if (m == o) {
+
+				int match = 0;
+				while (match < lenOther) {
+					if (main.charAt(runner + match) == other.charAt(match))
+						++match;
+					else
+						break;
 				}
-			} else {
-				runner = runner - match +1;//back to comparison position +1
-				match = 0;
-				start = 0;// restart
-				++runner;
+
+				if (match == lenOther)
+					return true;
+
 			}
+			++runner;
+
 		}
+
 		return false;
 	}
+
 	/*Question 8: 
 	Find the sum of any rectangle in a given  matrix. You will be given the coordinates of two opposite corners(Left-Top and right-bottom) 	
 	*/
