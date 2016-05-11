@@ -15,7 +15,7 @@
 	         Robot starts at (0,0) and it can stop any where on the maze. To simplify for NxN mazes there can be (N-1) Down + (N-1) Right
 	         movement. Question ask number of total number of paths (of any length). It is basically the number of nodes int tree structure
 	         formed by reccursion
-	         
+
     */
 
 
@@ -26,13 +26,13 @@
       Knapsack Problem with repetition allowed, i.e there is an infinite number of items
       w= weight array, v= value array, tw =  weight capacity of knapsack. Aim is to maximize the
       total value in Knapsack.
-      
+
       See a better solution in Dynamic Programming question section
       */
-	
+
 	public static int KnapsackWithRep(int[] w, int[] v, int tw) {
 		int[] knapArray = new int[w.length];
-		
+
 		if (tw < minArray(w))
 			return 0;
 		else {
@@ -43,7 +43,7 @@
 		}
 		return maxArray(knapArray);
 	}
-	
+
 	public static int minArray(int[] ar) {
 		int min = Integer.MAX_VALUE;
 
@@ -53,7 +53,8 @@
 		}
 		return min;
 	}
-	
+
+
 	public static int maxArray(int[] ar) {
 		int max = 0;
 
@@ -63,19 +64,20 @@
 		}
 		return max;
 	}
-	
+
       /*Question 2:
       Knapsack Problem with repetition, i.e there is only one item for each item.
       w= weight array, v= value array, tw =  weight capacity of knapsack. Aim is to maximize the
       total value in Knapsack.
       */
-     
+
       /*Question 3:
       Least Common subsequence of a given two sequence. ex: Inputs: s1 = "peacefully", s2 = "ecology". Output= "ecly"
       */
-     
-     
-     
+
+
+
+		 
      	public static String LCS(String s1, String s2) {
 		int s1L = s1.length();
 		int s2L = s2.length();
@@ -96,7 +98,7 @@
 	/*Question 4;
 	Print the all permutation of the given string. input = abc , output = abc acb bac bca cab cba
 	*/
-	
+
 	public static void permutationPrinter(String str) {
 
 		permutationPrinter(str, "");
@@ -116,7 +118,7 @@
 		}
 
 	}
-	
+
 	/*Question 5;
 	Print the mimimum number of coin adding up to the given sum (coins could be any integer)
 	If the combination is possible, then code will give desired result, otherwise it gives Interger.MAX
@@ -134,7 +136,7 @@
 		}
 		return result + 1;
 	}
-	
+
 	/* Question 6:
 	Return the list of subsets of the given string. ex: abc->[abc, ab, ac, bc, a, b, c, ]
 	*/
@@ -160,7 +162,7 @@
 		return subset;
 
 	}
-	
+
 	/* Question 7:
         Length of the longest palindromic subsequence of the give string (not necessarily continuous subsequence)
 	*/
@@ -180,7 +182,7 @@
 		}
 
 	}
-	
+
 	/* Question 8:
 	For given number n, find the smallest number whose digits consists of only 0 and 7 and divisible by n.
         */
@@ -203,9 +205,9 @@
 		return Math.min(b, a);
 
 	}
-	
+
 	Question 9: For given number n, find the smallest number whose digits consists of only 1 or 2 or 7 and divisible by n.
-	
+
 	public static int comb123(int n) {
 		int a = comb123(0, n);
 		return (a == Integer.MAX_VALUE) ? -1 : a;
@@ -225,54 +227,51 @@
 
 		return Math.min(a, Math.min(c, b));
 	}
-	
-	
+
+
 	/*
 	 *  Question 10:
 	 How many possible path are there for the robot if it moves only down and right on the N by N maze.
 	 *  I.e How many different way robot starts at (0,0) and stops at (N-1,N-1).
 	*/
      public static int NumberOfPossiblePath(int N){
-    	 
+
     	 return numberOfPossiblePath(N, 0, 0);
      }
-     
+
        public static int numberOfPossiblePath(int N, int m, int n) {
-		
+
 		if (m > N - 1 || n > N - 1)
 			return 0; //stop reccursion out of bound :)
 		if (m == N - 1 && n == N - 1)
 			return 1; // hit the best dead-end
-		
+
 			int a = numberOfPossiblePath(N, m + 1, n);
 			int	b = numberOfPossiblePath(N, m, n + 1);
-		
-		return a + b ; // sum 
+
+		return a + b ; // sum
 	}
-    
+
         /*
 	 *  Question How many possible path are there for the robot if it moves only down and right on the N by N maze.
 	 *  Robot starts at (0,0) and it can stop any where on the maze. To simplify for NxN mazes there can be (N-1) Down + (N-1) Right
 	 *  movement. Question ask number of total number of paths (of any length). It is basically the number of nodes int tree structure
-	 *  formed by reccursion. 
+	 *  formed by reccursion.
 	 */
          public static int NumberOfPossiblePathRobotCanStopAnywhere(int N){
-    	 
+
     	 return NumberOfPossiblePathRobotCanStopAnywhere(N, 0, 0);
          }
-     
+
         public static int NumberOfPossiblePathRobotCanStopAnywhere(int N, int m, int n) {
-		
+
 		if (m > N - 1 || n > N - 1)
 			return 0; //stop reccursion out of bound :)
 		if (m == N - 1 && n == N - 1)
 			return 1; // hit the best dead-end
-		
+
 			int a = NumberOfPossiblePathRobotCanStopAnywhere(N, m + 1, n);
 			int	b = NumberOfPossiblePathRobotCanStopAnywhere(N, m, n + 1);
-		
-		return a + b + 1 ; // sum 
+
+		return a + b + 1 ; // sum
 	}
-    
- 
-	
